@@ -6,11 +6,16 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        Button(action: {
+            // Deprecated in iOS 14
+            SKStoreReviewController.requestReview()
+        }, label: {
+            Text("Review App")
+        })
     }
 }
 
